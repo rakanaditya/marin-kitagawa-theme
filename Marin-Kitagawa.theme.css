@@ -1,0 +1,395 @@
+/**
+ * @name Marin Kitagawa
+ * @author Rakan Aditya
+ * @description Dark Discord theme dengan background Marin Kitagawa
+ * @version 1.0.0
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    /* =========================
+       BACKGROUND MARIN
+       ========================= */
+
+    --background-image: url("https://YOUR-IMAGE-URL.com/marin.jpg");
+
+    /* =========================
+       WARNA TEMA
+       ========================= */
+
+    --pink: #ff75c8;
+    --pink-light: #ff9ddd;
+    --purple: #b77aff;
+
+    --main-bg: rgba(15, 10, 25, 0.72);
+    --secondary-bg: rgba(25, 15, 35, 0.65);
+    --card-bg: rgba(35, 20, 45, 0.60);
+
+    --border-color: rgba(255, 117, 200, 0.35);
+
+    --text-main: #f8eaf5;
+    --text-muted: #bcaebe;
+}
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+    font-family: "Poppins", sans-serif !important;
+}
+
+/* =========================================
+   DISCORD BACKGROUND
+   ========================================= */
+
+body {
+    background: transparent !important;
+}
+
+.appMount-3lHmkl,
+.app-2CXKsg {
+    background: transparent !important;
+}
+
+/* Background utama */
+
+.app-2CXKsg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 5, 18, 0.60),
+            rgba(10, 5, 18, 0.78)
+        ),
+        var(--background-image);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -10;
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+[class*="sidebar"] {
+    background: rgba(10, 7, 18, 0.72) !important;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-right: 1px solid var(--border-color);
+}
+
+/* =========================================
+   CHANNEL LIST
+   ========================================= */
+
+[class*="containerDefault"],
+[class*="wrapperDefault"] {
+    background: transparent !important;
+}
+
+/* =========================================
+   CHAT AREA
+   ========================================= */
+
+[class*="chatContent"] {
+    background: rgba(15, 10, 25, 0.35) !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* =========================================
+   MESSAGE AREA
+   ========================================= */
+
+[class*="message"] {
+    transition: 0.2s ease;
+}
+
+[class*="message"]:hover {
+    background: rgba(255, 117, 200, 0.06) !important;
+}
+
+/* =========================================
+   MESSAGE INPUT
+   ========================================= */
+
+[class*="channelTextArea"] {
+    background: rgba(25, 15, 35, 0.72) !important;
+
+    border: 1px solid rgba(255, 117, 200, 0.25);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 20px rgba(255, 117, 200, 0.08);
+}
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+[class*="title"] {
+    background: rgba(15, 10, 25, 0.55) !important;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 117, 200, 0.20);
+}
+
+/* =========================================
+   MEMBERS LIST
+   ========================================= */
+
+[class*="membersWrap"] {
+    background: rgba(10, 7, 18, 0.60) !important;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-left: 1px solid rgba(255, 117, 200, 0.15);
+}
+
+/* =========================================
+   SERVER ICON
+   ========================================= */
+
+[class*="wrapper-"] [class*="selected"] {
+    box-shadow:
+        0 0 15px rgba(255, 117, 200, 0.65);
+}
+
+/* =========================================
+   SELECTED CHANNEL
+   ========================================= */
+
+[class*="modeSelected"] {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 117, 200, 0.25),
+        rgba(183, 122, 255, 0.18)
+    ) !important;
+
+    border-left: 3px solid var(--pink);
+
+    box-shadow:
+        inset 0 0 20px rgba(255, 117, 200, 0.08);
+}
+
+/* =========================================
+   HOVER CHANNEL
+   ========================================= */
+
+[class*="wrapper"]:hover {
+    background: rgba(255, 117, 200, 0.08) !important;
+}
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+    color: var(--pink-light) !important;
+}
+
+a:hover {
+    color: #ffffff !important;
+
+    text-shadow:
+        0 0 8px rgba(255, 117, 200, 0.7);
+}
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+button {
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+button:hover {
+    box-shadow:
+        0 0 12px rgba(255, 117, 200, 0.25);
+}
+
+/* =========================================
+   DISCORD ACCENT
+   ========================================= */
+
+[class*="lookFilled"] {
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--purple)
+    ) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    box-shadow:
+        0 4px 15px rgba(255, 117, 200, 0.25);
+}
+
+[class*="lookFilled"]:hover {
+    filter: brightness(1.1);
+
+    box-shadow:
+        0 0 20px rgba(255, 117, 200, 0.45);
+}
+
+/* =========================================
+   SETTINGS
+   ========================================= */
+
+[class*="standardSidebarView"] {
+    background: rgba(10, 7, 18, 0.65) !important;
+}
+
+[class*="contentRegion"] {
+    background: rgba(15, 10, 25, 0.55) !important;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* =========================================
+   SETTINGS CARDS
+   ========================================= */
+
+[class*="card"] {
+    background: rgba(35, 20, 45, 0.58) !important;
+
+    border: 1px solid rgba(255, 117, 200, 0.20);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   MODAL
+   ========================================= */
+
+[class*="modal"] {
+    background: rgba(20, 12, 28, 0.88) !important;
+
+    border: 1px solid rgba(255, 117, 200, 0.25);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(255, 117, 200, 0.10);
+}
+
+/* =========================================
+   SEARCH BOX
+   ========================================= */
+
+[class*="searchBar"] {
+    background: rgba(255, 255, 255, 0.07) !important;
+
+    border: 1px solid rgba(255, 117, 200, 0.15);
+
+    border-radius: 10px;
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        var(--pink),
+        var(--purple)
+    );
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pink-light);
+}
+
+/* =========================================
+   USER AREA
+   ========================================= */
+
+[class*="panels"] {
+    background: rgba(10, 7, 18, 0.70) !important;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-top: 1px solid rgba(255, 117, 200, 0.15);
+}
+
+/* =========================================
+   TEXT GLOW
+   ========================================= */
+
+[class*="header"] {
+    color: var(--text-main);
+}
+
+/* =========================================
+   MARIN PINK GLOW
+   ========================================= */
+
+[class*="selected"] svg {
+    filter:
+        drop-shadow(
+            0 0 5px rgba(255, 117, 200, 0.7)
+        );
+}
+
+/* =========================================
+   GLASS EFFECT
+   ========================================= */
+
+[class*="content-"],
+[class*="container-"] {
+    --webkit-backdrop-filter: blur(8px);
+}
+
+/* =========================================
+   SUBTLE ANIMATION
+   ========================================= */
+
+[class*="button"] {
+    transition: all 0.2s ease;
+}
+
+[class*="button"]:hover {
+    transform: translateY(-1px);
+}
